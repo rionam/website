@@ -18,7 +18,7 @@ If you just want to "kick the tires" on Kubernetes, use the [local Docker-based 
 
 When you are ready to scale up to more machines and higher availability, a [hosted solution](#hosted-solutions) is the easiest to create and maintain.
 
-[Turnkey cloud solutions](#turnkey-cloud-solutions) require only a few commands to create
+[Turnkey cloud solutions](#turnkey-cloud-solutions) require only a few commands to create,
 and cover a wide range of cloud providers. [On-Premises turnkey cloud solutions](#on-premises-turnkey-cloud-solutions) have the simplicity of the turnkey cloud solution combined with the security of your own private network.
 
 If you already have a way to configure hosting resources, use [kubeadm](/docs/setup/independent/create-cluster-kubeadm/) to easily bring up a cluster with a single command per machine.
@@ -36,13 +36,13 @@ a Kubernetes cluster from scratch.
 
 * [Minishift](https://docs.okd.io/latest/minishift/) installs the community version of the Kubernetes enterprise platform OpenShift for local development & testing.  It offers an All-In-One VM (`minishift start`) for Windows, macOS and Linux and the containeriz based `oc cluster up` (Linux only) and [comes with some easy to install Add Ons](https://github.com/minishift/minishift-addons/tree/master/add-ons).
 
-* [microk8s](https://microk8s.io/) provides a single command installation of the latest Kubernetes release on a local machine for development and testing. Setup is quick, fast (~30 sec) and supports many plugins including Istio with a single command.
+* [microk8s](https://microk8s.io/) provides a single command installation of the latest Kubernetes release on a local machine for development and testing. Setup is fast (~30 sec) and supports many plugins (including Istio) with a single command.
 
 * [IBM Cloud Private-CE (Community Edition)](https://github.com/IBM/deploy-ibm-cloud-private) can use VirtualBox on your machine to deploy Kubernetes to one or more VMs for development and test scenarios. Scales to full multi-node cluster.
 
-* [IBM Cloud Private-CE (Community Edition) on Linux Containers](https://github.com/HSBawa/icp-ce-on-linux-containers) is a Terraform/Packer/BASH based Infrastructure as Code (IaC) scripts to create a seven node (1 Boot, 1 Master, 1 Management, 1 Proxy and 3 Workers) LXD cluster on  Linux Host.
+* [IBM Cloud Private-CE (Community Edition) on Linux Containers](https://github.com/HSBawa/icp-ce-on-linux-containers) is a Terraform/Packer/BASH based Infrastructure as Code (IaC) scripts to create a seven node (1 Boot, 1 Master, 1 Management, 1 Proxy and 3 Workers) LXD cluster on Linux Host.
 
-* [Kubeadm-dind](https://github.com/kubernetes-sigs/kubeadm-dind-cluster) is a multi-node (while minikube is single-node) Kubernetes cluster which only requires a docker daemon. It uses docker-in-docker technique to spawn the Kubernetes cluster.
+* [Kubeadm-dind](https://github.com/kubernetes-sigs/kubeadm-dind-cluster) is a multi-node (while minikube is single-node) Kubernetes cluster which only requires a Docker daemon. It uses Docker-in-Docker technique to spawn the Kubernetes cluster.
 
 * [Ubuntu on LXD](/docs/getting-started-guides/ubuntu/local/) supports a nine-instance deployment on localhost.
 
@@ -254,10 +254,8 @@ The above table is ordered by version test/used in nodes, followed by support le
 * **OS** is the base operating system of the nodes.
 * **Config. Mgmt.** is the configuration management system that helps install and maintain Kubernetes on the
   nodes.
-* **Networking** is what implements the [networking model](/docs/concepts/cluster-administration/networking/). Those with networking type
-  _none_ may not support more than a single node, or may support multiple VM nodes in a single physical node.
-* **Conformance** indicates whether a cluster created with this configuration has passed the project's conformance
-  tests for supporting the API and base features of Kubernetes v1.0.0.
+* **Networking** is what implements the [networking model](/docs/concepts/cluster-administration/networking/). Those with networking type _none_ may not support more than a single node, or may support multiple VM nodes in a single physical node.
+* **Conformance** indicates whether a cluster created with this configuration has passed the project's conformance tests for supporting the API and base features of Kubernetes v1.0.0.
 * **Support Levels**
   * **Project**: Kubernetes committers regularly use this configuration, so it usually works with the latest release
     of Kubernetes.
